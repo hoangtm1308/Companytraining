@@ -1,4 +1,7 @@
 package com.example.companytraining.services;
 
-public interface ApartmentService {
+import com.example.companytraining.models.Apartment;
+
+public interface ApartmentService extends CrudService<Apartment, Long> {
+
 }

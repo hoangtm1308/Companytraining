@@ -1,12 +1,13 @@
-package com.example.companytraining.services;
+package com.example.companytraining.services.impl;
 
 import com.example.companytraining.models.Apartment;
+import com.example.companytraining.services.ApartmentService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class ApartmentServiceImpl implements ApartmentService{
+public class ApartmentServiceImpl implements ApartmentService {
 
     @Override
     public Set<Apartment> findAll() {
@@ -32,4 +33,5 @@ public class ApartmentServiceImpl implements ApartmentService{
     public void deleteById(Long aLong) {
 
     }
+
 }

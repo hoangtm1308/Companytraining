@@ -1,6 +1,7 @@
-package com.example.companytraining.services;
+package com.example.companytraining.services.impl;
 
 import com.example.companytraining.models.Employee;
+import com.example.companytraining.services.EmployeeService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -32,4 +33,5 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void deleteById(Long aLong) {
 
     }
+
 }

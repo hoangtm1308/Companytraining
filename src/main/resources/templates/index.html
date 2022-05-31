@@ -20,7 +20,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
-                            <table class="table table-hover ">
+                            <table class="table table-hover">
                                 <thead class="thead-inverse">
                                     <tr>
                                         <th>Name</th>
@@ -30,22 +30,30 @@
                                         <th>Delete</th>
                                     </tr>
                                 </thead>
-                                <tr>
-                                    <td><a href="#">Construction</a></td>
+                                <tr th:remove="all">
+                                    <td>Construction</td>
                                     <td>Engineering and Construction, Mechanical</td>
                                     <td><a href="#">View</a></td>
                                     <td><a href="#">Update</a></td>
                                     <td><a href="#">Delete</a></td>
                                 </tr>
-                                <tr>
-                                    <td><a href="#">Service</a></td>
+                                <tr th:remove="all">
+                                    <td>Service</td>
                                     <td>Provide Service</td>
                                     <td><a href="#">View</a></td>
                                     <td><a href="#">Update</a></td>
                                     <td><a href="#">Delete</a></td>
                                 </tr>
+                                <tr th:each="catalogue : ${catalogues}">
+                                    <td th:text="${catalogue.name}">Service</td>
+                                    <td th:text="${catalogue.description}">Provide Service</td>
+                                    <td><a href="#" th:href="@{'/catalogue/'+${catalogue.id}+'/company'}">View</a></td>
+                                    <td><a href="#" th:href="@{/catalogue/update/{id}(id=${catalogue.id})}">Update</a></td>
+                                    <td><a href="#" th:href="@{/catalogue/delete/{id}(id=${catalogue.id})}">Delete</a></td>
+                                </tr>
                             </table>
                         </div>
+                        <a th:href="@{/createupdatecatalogue}">Create New Catalogue</a>
                     </div>
                 </div>
             </div>

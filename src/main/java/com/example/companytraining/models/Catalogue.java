@@ -21,4 +21,24 @@ public class Catalogue extends BaseEntity{
 
     @ManyToMany(mappedBy = "catalogues")
     private Set<Company> companies;
+
+    public Catalogue(Long id, String name, String description, Set<Company> companies) {
+        super(id);
+        this.name = name;
+        this.description = description;
+        this.companies = companies;
+    }
+
+    public Catalogue(String name, String description, Set<Company> companies) {
+        this.name = name;
+        this.description = description;
+        this.companies = companies;
+    }
+
+    public Catalogue(Long id, String name, String description) {
+        super(id);
+        this.name = name;
+        this.description = description;
+    }
+
 }
